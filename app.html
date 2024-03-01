@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>QRapid &mdash; App</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="general.css" />
+        <link rel="stylesheet" href="app.css" />
+    </head>
+    <body>
+        <header class="block">
+            <a class="header-logo" href="/">
+                <img height="50px" src="assets/site-logo.png" alt="site-logo" />
+            </a>
+        </header>
+        <main class="block">
+            <div class="options">
+                <div class="url-input-container">
+                    <h2>
+                        <img class="icon" src="assets/url.png" alt="" /> URL
+                    </h2>
+
+                    <input
+                        class="url-input"
+                        type="text"
+                        placeholder="https://"
+                        required
+                        autocomplete="on"
+                        spellcheck="false"
+                    />
+                    <label class="alert alert-url alert-invalid hidden-none"
+                        >:: invalid url</label
+                    >
+                </div>
+                <div class="color-input-container">
+                    <h2>
+                        <img class="icon" src="assets/colors.png" alt="" />
+                        Colors
+                    </h2>
+
+                    <input
+                        type="text"
+                        value="#000000"
+                        class="foreground-input"
+                        placeholder="Foreground color"
+                        spellcheck="false"
+                    />
+
+                    <input
+                        type="text"
+                        value="#adff2f"
+                        class="background-input"
+                        placeholder="Background color"
+                        spellcheck="false"
+                    />
+                    <label class="alert alert-colors alert-valid"
+                        >:: valid colors</label
+                    >
+                    <div class="color-themes">
+                        <div class="theme">
+                            <span style="background-color: #000"></span>
+                            <span style="background-color: #adff2f"></span>
+                        </div>
+                        <div class="theme">
+                            <span style="background-color: #adefd1"></span>
+                            <span style="background-color: #00203f"></span>
+                        </div>
+                        <div class="theme">
+                            <span style="background-color: #101920"></span>
+                            <span style="background-color: #ffe715"></span>
+                        </div>
+                        <div class="theme">
+                            <span style="background-color: #000"></span>
+                            <span style="background-color: #e94c3d"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-input-container">
+                    <h2>
+                        <img class="icon" src="assets/logo.png" alt="" /> Logo
+                        (coming soon)
+                    </h2>
+                    <!-- <input
+                        type="file"
+                        accept="image/*"
+                        name="logo-input"
+                        class="logo-input"
+                    /> -->
+                </div>
+                <button class="btn-generate">4. Generate</button>
+            </div>
+            <div class="result">
+                <div class="url-container">
+                    <a class="url">QR PREVIEW</a>
+                </div>
+                <div class="qrcode-container">
+                    <img
+                        class="qr-placeholder-img"
+                        src="assets/qr-placeholder.png"
+                        alt=""
+                    />
+                </div>
+                <div class="result-actions">
+                    <button class="btn-download btn-secondary">
+                        5. Download QR
+                        <img class="icon" src="assets/download.png" alt="" />
+                    </button>
+                    <div class="select-container">
+                        <select name="file-format" class="select-format">
+                            <option value="png">PNG</option>
+                            <option disabled value="jpg">JPG</option>
+                            <option disabled value="svg">SVG</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="section-container">
+            <section class="section-get-started block">
+                <h4>GET STARTED</h4>
+                <h2 class="section-title">Create your custom QR Code</h2>
+                <ul>
+                    <li>
+                        <h3 class="title">1. URL</h3>
+                        <p>
+                            Enter the URL you'd like to generate a QR code for.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="title">2. Colors</h3>
+                        <p>
+                            Select your preferred colors or your brand colors.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="title">3. Logo</h3>
+                        <p>
+                            Select you logo to further customize your QR code.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="title">4. Download</h3>
+                        <p>
+                            Select your preferred file format from the format
+                            selection drop down and hit the
+                            <b>"Download QR"</b> button to download your QR
+                            code.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <footer>
+            Made with ❤️ by
+            <a target="_blank" href="https://0x902.netlify.app">0x902</a>
+        </footer>
+        <script defer src="qrcode.js"></script>
+        <script defer src="functions.js"></script>
+        <script defer src="app.js"></script>
+    </body>
+</html>

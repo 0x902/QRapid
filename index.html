@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>QRapid &mdash; QR Generator</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="general.css" />
+        <link rel="stylesheet" href="home.css" />
+    </head>
+    <body>
+        <header class="block">
+            <a class="header-logo" href="/">
+                <img height="50" src="assets/site-logo.png" alt="site-logo" />
+            </a>
+            <a class="btn btn-secondary" href="app.html">Go to app &rarr;</a>
+        </header>
+        <main class="block">
+            <div class="content">
+                <h1>Convert your<br />link to QR code.</h1>
+                <form>
+                    <input
+                        class="url-input"
+                        type="text"
+                        placeholder="https://"
+                        required
+                        autocomplete="on"
+                        spellcheck="false"
+                    />
+                    <button class="btn-generate" type="submit">Generate</button>
+                </form>
+                <label class="alert alert-invalid hidden-none"
+                    >:: invalid url</label
+                >
+                <p class="hero-description">
+                    Your QR code will be generated automatically, your generated
+                    QR code will open this URL.
+                </p>
+            </div>
+            <div class="result hidden-none">
+                <div class="url-container">
+                    <a class="url" href="#">https://</a>
+                </div>
+                <div class="qrcode-container"></div>
+                <div class="result-actions">
+                    <button class="btn-download btn-secondary">
+                        Download
+                        <img class="icon" src="assets/download.png" alt="" />
+                    </button>
+                    <div class="select-container">
+                        <!-- <label for="select-format">File Format:</label> -->
+                        <select name="file-format" class="select-format">
+                            <option value="png">PNG</option>
+                            <option disabled value="jpg">JPG</option>
+                            <option disabled value="svg">SVG</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="block">
+            <h2 class="section-title">
+                Get started on your QR code in seconds.
+            </h2>
+            <p>
+                Make your custom QR code in a few taps. All you need is your
+                mobile device or computer and browser; you don't have to
+                download special software or heck even create an account to use
+                this tool.
+            </p>
+        </section>
+
+        <div class="steps-container">
+            <section class="steps block">
+                <h2 class="section-title">How to Use?</h2>
+                <ul>
+                    <li>
+                        <h3 class="title">
+                            <img src="assets/url.png" />Enter a URL
+                        </h3>
+                        <p>
+                            Enter the URL you'd like to generate a QR code for,
+                            then click <b>"Generate"</b>. This typically takes
+                            just a second or two to generate the QR code.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="title">
+                            <img src="assets/test.png" />Scan and test
+                        </h3>
+                        <p>
+                            Scan the generated QR code using a QR scanner
+                            yourself and verify if it redirects to the correct
+                            resource.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="title">
+                            <img src="assets/download.png" />Download
+                        </h3>
+                        <p>
+                            If the URL is correct and the QR code works, click
+                            on <b>"Download"</b> to save the QR code, which you
+                            can now utilize as needed. We currently only support
+                            .png format. More formats will be available soon.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="block">
+            <h2 class="section-title">Customize free QR codes as you like.</h2>
+            <p>
+                You can now personalize your QR code experience to your heart's
+                content. With customizable colors, you can choose the perfect
+                palette to match your style. Add a touch of creativity by
+                incorporating custom images into your QR codes.
+            </p>
+            <a class="btn btn-secondary" href="app.html"
+                ><img class="icon" src="assets/custom.png" alt="" />Create
+                custom QR</a
+            >
+        </section>
+        <footer>
+            Made with ❤️ by
+            <a target="_blank" href="https://0x902.netlify.app">0x902</a>
+        </footer>
+
+        <script defer src="qrcode.js"></script>
+        <script defer src="functions.js"></script>
+        <script defer src="index.js"></script>
+    </body>
+</html>
