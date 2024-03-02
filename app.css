@@ -79,6 +79,7 @@ main {
 .color-themes {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .color-themes .theme {
