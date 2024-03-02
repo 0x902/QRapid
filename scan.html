@@ -20,42 +20,16 @@
             <a class="header-logo" href="/">
                 <img height="50px" src="assets/site-logo.png" alt="site-logo" />
             </a>
+            <nav>
+                <a class="nav-selected" href="scan.html">Scan</a>
+                <a href="app.html">Generate</a>
+            </nav>
         </header>
         <main class="block">
             <div id="qr-reader"></div>
             <div class="results-container hidden-none">
                 <h2>Scan Results</h2>
-                <ul class="results-list">
-                    <!-- <li>
-                        <div class="result-url-container">
-                            <span class="result-count">1</span>
-                            <a href="#">google.com</a>
-                        </div>
-                        <div class="result-action">
-                            <button class="btn-secondary">
-                                <img
-                                    class="icon"
-                                    src="assets/copy.png"
-                                    alt=""
-                                />
-                            </button>
-                            <button class="btn-secondary">
-                                <img
-                                    class="icon"
-                                    src="assets/share.png"
-                                    alt=""
-                                />
-                            </button>
-                            <button class="btn-secondary">
-                                <img
-                                    class="icon"
-                                    src="assets/visit.png"
-                                    alt=""
-                                />
-                            </button>
-                        </div>
-                    </li> -->
-                </ul>
+                <ul class="results-list"></ul>
             </div>
         </main>
 
@@ -73,6 +47,7 @@
             <a target="_blank" href="https://0x902.netlify.app">0x902</a>
         </footer>
         <script src="https://unpkg.com/html5-qrcode"></script>
+        <script src="functions.js"></script>
         <script src="scan.js"></script>
     </body>
 </html>

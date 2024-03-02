@@ -17,6 +17,14 @@ function isValidHex(hexCode) {
     return pattern.test(hexCode);
 }
 
+function formatUrl(url) {
+    url =
+        url.includes("https://") || url.includes("http:??")
+            ? url
+            : `https://${url}`;
+    return url;
+}
+
 function generateQR(
     qrCodeContainer,
     url,
@@ -34,23 +42,31 @@ function generateQR(
     });
 }
 
-document.querySelector(".btn-download").addEventListener("click", async () => {
-    const qrImageSrc = document.querySelector(".qrcode-container img").src;
+function addDownloadListener() {
+    document
+        .querySelector(".btn-download")
+        .addEventListener("click", async () => {
+            const qrImageSrc = document.querySelector(
+                ".qrcode-container img"
+            ).src;
 
-    // Fetch the image
-    const response = await fetch(qrImageSrc);
-    const blob = await response.blob();
+            // Fetch the image
+            const response = await fetch(qrImageSrc);
+            const blob = await response.blob();
 
-    // Create a temporary anchor element
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = `QRapid-${siteUrl.toLowerCase().replaceAll(" ", "")}.png`;
+            // Create a temporary anchor element
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = `QRapid-${siteUrl
+                .toLowerCase()
+                .replaceAll(" ", "")}.png`;
 
-    // Simulate click on the anchor element to trigger download
-    document.body.appendChild(link);
-    link.click();
+            // Simulate click on the anchor element to trigger download
+            document.body.appendChild(link);
+            link.click();
 
-    // Clean up
-    document.body.removeChild(link);
-    URL.revokeObjectURL(link.href);
-});
+            // Clean up
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        });
+}

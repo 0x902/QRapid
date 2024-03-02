@@ -27,3 +27,5 @@ elements.form.addEventListener("submit", (e) => {
         elements.resultEl.classList.remove("hidden-none");
     }
 });
+
+addDownloadListener();

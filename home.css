@@ -4,40 +4,6 @@ body {
     max-width: 100%;
 }
 
-.header-logo {
-    margin-right: auto;
-}
-
-header .btn-cta:hover {
-    transform: unset;
-}
-
-header nav {
-    display: flex;
-}
-
-header nav a {
-    border-radius: 0 !important;
-    padding: 15px 20px;
-    border: 2px solid black;
-    text-decoration: none;
-    background-color: white;
-    font-weight: 500;
-}
-
-header nav a:nth-child(1) {
-    border-radius: 10px 0 0 10px !important;
-}
-
-header nav a:nth-child(2) {
-    margin-left: -2px;
-    border-radius: 0 10px 10px 0 !important;
-}
-
-header nav a:hover {
-    background-color: #adff2f;
-}
-
 main {
     display: grid;
     grid-template-columns: 1.5fr minmax(0, 1fr);
@@ -206,15 +172,6 @@ input {
         padding: 15px;
     }
 
-    header nav a {
-        border-radius: 0 !important;
-        padding: 15px 10px;
-        border: 2px solid black;
-        text-decoration: none;
-        background-color: white;
-        font-weight: 500;
-    }
-
     form {
         flex-direction: column;
         gap: 0px;
@@ -249,7 +206,7 @@ input {
     }
 
     .steps-container {
-        padding: 30px;
+        padding: 20px;
     }
 
     .steps ul {

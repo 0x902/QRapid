@@ -26,6 +26,44 @@ header {
     z-index: 999;
 }
 
+.header-logo {
+    margin-right: auto;
+}
+
+header .btn-cta:hover {
+    transform: unset;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav a {
+    border-radius: 0 !important;
+    padding: 15px 20px;
+    border: 2px solid black;
+    text-decoration: none;
+    background-color: white;
+    font-weight: 500;
+}
+
+header nav a:nth-child(1) {
+    border-radius: 10px 0 0 10px !important;
+}
+
+header nav a:nth-child(2) {
+    margin-left: -2px;
+    border-radius: 0 10px 10px 0 !important;
+}
+
+header nav a:hover {
+    background-color: #adff2f;
+}
+
+.nav-selected {
+    background-color: rgb(211, 211, 211);
+}
+
 h1 {
     font-size: 3.6rem;
     font-weight: 700;
@@ -152,6 +190,15 @@ a {
         right: 0;
         background-color: white;
         border-bottom: 2px solid black;
+    }
+
+    header nav a {
+        border-radius: 0 !important;
+        padding: 15px 10px;
+        border: 2px solid black;
+        text-decoration: none;
+        background-color: white;
+        font-weight: 500;
     }
 
     header a.header-logo {

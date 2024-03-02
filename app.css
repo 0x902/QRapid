@@ -1,7 +1,3 @@
-header {
-    margin-bottom: 30px !important;
-}
-
 h2 {
     font-size: 2rem;
 }
@@ -243,6 +239,15 @@ section.section-get-started h4,
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 15px;
+    }
+
+    header nav a {
+        border-radius: 0 !important;
+        padding: 15px 10px;
+        border: 2px solid black;
+        text-decoration: none;
+        background-color: white;
+        font-weight: 500;
     }
 
     form {

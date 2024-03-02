@@ -89,6 +89,8 @@ elements.themesEl.forEach((element) => {
     });
 });
 
+addDownloadListener();
+
 // elements.logoInputEl.onchange = () => {
 //     let reader = new FileReader();
 //     reader.readAsDataURL(elements.logoInputEl.files[0]);

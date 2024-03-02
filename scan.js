@@ -43,34 +43,35 @@ function onScanSuccess(decodedText, decodedResult) {
                         </div>
                     </li>
         `;
-        document
-            .querySelectorAll(
-                `li[dataset-value="${decodedText + countResults}"] img`
-            )
-            .forEach((el) => {
-                url = el.parentElement.parentElement.dataset.value;
-                (url =
-                    url.includes("https://") || url.includes("http://")
-                        ? url
-                        : `https://${url}`),
-                    "_blank";
-                el.addEventListener("click", () => {
-                    if (el.id == "btn-copy") {
-                        navigator.clipboard.writeText(url);
-                        alert("copied url!");
-                    } else if (el.id == "btn-visit") {
-                        window.open(url);
-                    } else if (el.id == "btn-share") {
-                        const shareData = {
-                            title: "QRapid Scan QR - Share",
-                            text: "Shared from QRapid.netlify.app",
-                            url: url,
-                        };
-                        navigator.share(shareData);
-                    }
-                });
-            });
+        addListeners();
     }
+}
+
+function addListeners() {
+    const parents = resultsListEl.querySelectorAll("li");
+    parents.forEach((child) => {
+        const actionBtns = child.querySelectorAll(".result-action img");
+        actionBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                datasetValue = formatUrl(
+                    btn.parentElement.parentElement.dataset.value
+                );
+                if (btn.id == "btn-copy") {
+                    navigator.clipboard.writeText(datasetValue);
+                    alert("Copied to clipboard!");
+                } else if (btn.id == "btn-share") {
+                    const data = {
+                        title: "QRapid - Scan QR",
+                        url: datasetValue,
+                        text: "Scanned url using https://qrapid.netlify.app",
+                    };
+                    navigator.share(data);
+                } else if (btn.id == "btn-visit") {
+                    window.open(datasetValue, "_blank");
+                }
+            });
+        });
+    });
 }
 
 var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", {
