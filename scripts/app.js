@@ -36,6 +36,7 @@ function updateColors() {
 }
 
 elements.urlInput.addEventListener("input", () => {
+    elements.urlInput.value = elements.urlInput.value.replaceAll(" ", "");
     elements.alertUrlEl.classList.remove("hidden-none");
     if (isValidUrl(elements.urlInput.value)) {
         elements.alertUrlEl.textContent = ":: valid url";

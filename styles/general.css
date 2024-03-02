@@ -163,6 +163,11 @@ b {
     font-weight: 600;
 }
 
+.required::after {
+    content: "*";
+    color: crimson;
+}
+
 footer {
     text-align: center;
     padding: 15px;

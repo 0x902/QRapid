@@ -10,6 +10,8 @@ const elements = {
 let siteUrl = "";
 
 elements.urlInput.addEventListener("input", () => {
+    elements.urlInput.value = elements.urlInput.value.replaceAll(" ", "");
+
     elements.alertEl.classList.toggle(
         "hidden-none",
         isValidUrl(elements.urlInput.value)
