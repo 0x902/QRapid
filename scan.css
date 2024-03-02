@@ -23,12 +23,17 @@ main {
     justify-content: center;
 }
 
+#qr-reader select {
+    margin-bottom: 10px;
+}
+
 #qr-reader video,
 #qr-shaded-region {
     border-radius: 10px 10px 0 0;
 }
 
-#qr-reader button {
+#qr-reader button,
+#qr-reader select {
     width: 100%;
 }
 

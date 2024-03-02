@@ -1,11 +1,13 @@
 const resultsListEl = document.querySelector(".results-list");
 const resultsContainerEl = document.querySelector(".results-container");
+let beat = new Audio("assets/beep.mp3");
 
 var lastResult,
     countResults = 0;
 
 function onScanSuccess(decodedText, decodedResult) {
     if (decodedText !== lastResult) {
+        beat.play();
         resultsContainerEl.classList.contains("hidden-none")
             ? resultsContainerEl.classList.remove("hidden-none")
             : "";
@@ -62,8 +64,8 @@ function addListeners() {
                 } else if (btn.id == "btn-share") {
                     const data = {
                         title: "QRapid - Scan QR",
-                        url: datasetValue,
-                        text: "Scanned url using https://qrapid.netlify.app",
+                        url: "https://qrapid.netlify.app",
+                        text: datasetValue,
                     };
                     navigator.share(data);
                 } else if (btn.id == "btn-visit") {
