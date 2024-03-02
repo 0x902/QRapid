@@ -18,10 +18,11 @@ header nav {
 
 header nav a {
     border-radius: 0 !important;
-    padding: 15px;
+    padding: 15px 10px;
     border: 2px solid black;
     text-decoration: none;
     background-color: white;
+    font-weight: 500;
 }
 
 header nav a:nth-child(1) {
