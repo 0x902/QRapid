@@ -131,6 +131,7 @@ footer {
     font-size: 1.6rem;
     background-color: black;
     color: white;
+    margin-top: auto;
 }
 
 footer a {

@@ -1434,17 +1434,17 @@ var QRCode;
      * @class QRCode
      * @constructor
      * @example
-     * new QRCode(document.getElementById("test"), "http://jindo.dev.naver.com/collie");
+     * new QRCode(document.getElementById("test"), "https://0x902.netlify.app");
      *
      * @example
      * var oQRCode = new QRCode("test", {
-     *    text : "http://naver.com",
+     *    text : "https://0x902.netlify.app",
      *    width : 128,
      *    height : 128
      * });
      *
      * oQRCode.clear(); // Clear the QRCode.
-     * oQRCode.makeCode("http://map.naver.com"); // Re-create the QRCode.
+     * oQRCode.makeCode("https://QRapid.netlify.app"); // Re-create the QRCode.
      *
      * @param {HTMLElement|String} el target element or 'id' attribute of element.
      * @param {Object|String} vOption

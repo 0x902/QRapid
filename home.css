@@ -12,6 +12,31 @@ header .btn-cta:hover {
     transform: unset;
 }
 
+header nav {
+    display: flex;
+}
+
+header nav a {
+    border-radius: 0 !important;
+    padding: 15px;
+    border: 2px solid black;
+    text-decoration: none;
+    background-color: white;
+}
+
+header nav a:nth-child(1) {
+    border-radius: 10px 0 0 10px !important;
+}
+
+header nav a:nth-child(2) {
+    margin-left: -2px;
+    border-radius: 0 10px 10px 0 !important;
+}
+
+header nav a:hover {
+    background-color: #adff2f;
+}
+
 main {
     display: grid;
     grid-template-columns: 1.5fr minmax(0, 1fr);
@@ -54,8 +79,8 @@ input {
     padding: 15px;
     border-radius: 15px;
     background-color: whitesmoke;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 2px;
     transition: all 1s ease;
 }
 

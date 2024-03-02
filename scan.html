@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>QRapid &mdash; Scan</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="general.css" />
+        <link rel="stylesheet" href="scan.css" />
+    </head>
+    <body>
+        <header class="block">
+            <a class="header-logo" href="/">
+                <img height="50px" src="assets/site-logo.png" alt="site-logo" />
+            </a>
+        </header>
+        <main class="block">
+            <div id="qr-reader"></div>
+            <div class="results-container">
+                <h2>Scan Results</h2>
+                <ul class="results-list">
+                    <!-- <li>
+                        <div class="result-url-container">
+                            <span class="result-count">1</span>
+                            <a href="#">google.com</a>
+                        </div>
+                        <div class="result-action">
+                            <button class="btn-secondary">
+                                <img
+                                    class="icon"
+                                    src="assets/copy.png"
+                                    alt=""
+                                />
+                            </button>
+                            <button class="btn-secondary">
+                                <img
+                                    class="icon"
+                                    src="assets/share.png"
+                                    alt=""
+                                />
+                            </button>
+                            <button class="btn-secondary">
+                                <img
+                                    class="icon"
+                                    src="assets/visit.png"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </main>
+
+        <section class="block">
+            <h2 class="section-title">QR Code Scanner</h2>
+            <p>
+                The QR code scanner online allows you to scan QR codes without
+                any app. It helps you scan QR from images and also webcam. You
+                can use it online on both mobile and desktop.
+            </p>
+        </section>
+
+        <footer>
+            Made with ❤️ by
+            <a target="_blank" href="https://0x902.netlify.app">0x902</a>
+        </footer>
+        <script src="https://unpkg.com/html5-qrcode"></script>
+        <script src="scan.js"></script>
+    </body>
+</html>
