@@ -166,6 +166,7 @@ b {
 .required::after {
     content: "*";
     color: crimson;
+    margin-left: -8px;
 }
 
 footer {
