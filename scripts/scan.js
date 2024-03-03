@@ -59,8 +59,14 @@ function addListeners() {
                     btn.parentElement.parentElement.dataset.value
                 );
                 if (btn.id == "btn-copy") {
-                    navigator.clipboard.writeText(datasetValue);
-                    alert("Copied to clipboard!");
+                    navigator.clipboard
+                        .writeText(datasetValue)
+                        .then(() => {
+                            alert("successfully copied to clipboard!");
+                        })
+                        .catch(() => {
+                            alert("Error! Couldn't copy :(");
+                        });
                 } else if (btn.id == "btn-share") {
                     const data = {
                         title: "QRapid - Scan QR",
