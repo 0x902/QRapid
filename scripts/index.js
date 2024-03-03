@@ -5,9 +5,10 @@ const elements = {
     qrEl: document.querySelector(".qrcode-container"),
     alertEl: document.querySelector(".alert"),
     ulrPreviewEl: document.querySelector(".url"),
+    selectFormatEl: document.querySelector(".select-format"),
 };
 
-let siteUrl = "";
+var siteUrl = "";
 
 elements.urlInput.addEventListener("input", () => {
     elements.urlInput.value = elements.urlInput.value.replaceAll(" ", "");
@@ -23,11 +24,10 @@ elements.form.addEventListener("submit", (e) => {
 
     const userInput = elements.urlInput.value.trim();
     if (isValidUrl(userInput)) {
-        siteUrl = userInput;
-        elements.ulrPreviewEl.innerHTML = `<a class="url" target="_blank" href="https://${userInput}">${userInput} &rarr;</a>`;
-        generateQR(elements.qrEl, userInput, "#000", "#fff");
+        siteUrl = formatUrl(userInput);
+        elements.ulrPreviewEl.innerHTML = `<a class="url" target="_blank" href="${siteUrl}">${siteUrl} &rarr;</a>`;
+        generateQR(elements.qrEl, siteUrl, "#000", "#fff");
         elements.resultEl.classList.remove("hidden-none");
+        addDownloadListener();
     }
 });
-
-addDownloadListener();

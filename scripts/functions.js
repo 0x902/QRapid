@@ -25,6 +25,16 @@ function formatUrl(url) {
     return url;
 }
 
+function formatDownloadFileName(fileName, fileFormat) {
+    url = fileName
+        .replaceAll("https://", "")
+        .replaceAll("http://", "")
+        .replaceAll("www", "")
+        .replaceAll("/", "")
+        .replaceAll(".", "_");
+    return `QRapid-${url}.${fileFormat}`;
+}
+
 function generateQR(
     qrCodeContainer,
     url,
@@ -46,27 +56,38 @@ function addDownloadListener() {
     document
         .querySelector(".btn-download")
         .addEventListener("click", async () => {
-            const qrImageSrc = document.querySelector(
-                ".qrcode-container img"
-            ).src;
+            const isMobile = navigator.userAgentData.mobile;
+            const downloadFormat =
+                document.querySelector(".select-format").value;
+            if (isMobile) {
+                const link = document.createElement("a");
+                link.download = formatDownloadFileName(siteUrl, downloadFormat);
+                link.href = document
+                    .querySelector(".qrcode-container > canvas")
+                    .toDataURL();
+                link.click();
+                link.delete;
+            } else {
+                const qrImageSrc = document.querySelector(
+                    ".qrcode-container img"
+                ).src;
 
-            // Fetch the image
-            const response = await fetch(qrImageSrc);
-            const blob = await response.blob();
+                // Fetch the image
+                const response = await fetch(qrImageSrc);
+                const blob = await response.blob();
 
-            // Create a temporary anchor element
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = `QRapid-${siteUrl
-                .toLowerCase()
-                .replaceAll(" ", "")}.png`;
+                // Create a temporary anchor element
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = formatDownloadFileName(siteUrl, downloadFormat);
 
-            // Simulate click on the anchor element to trigger download
-            document.body.appendChild(link);
-            link.click();
+                // Simulate click on the anchor element to trigger download
+                document.body.appendChild(link);
+                link.click();
 
-            // Clean up
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href);
+                // Clean up
+                document.body.removeChild(link);
+                URL.revokeObjectURL(link.href);
+            }
         });
 }

@@ -13,7 +13,7 @@ const elements = {
 
 let foreGroundColor = elements.foreGroundColorEl.value;
 let backgroundColor = elements.backgroundColorEl.value;
-let siteUrl = "";
+var siteUrl = "";
 let validURl = false;
 let validColors = true;
 
@@ -42,7 +42,7 @@ elements.urlInput.addEventListener("input", () => {
         elements.alertUrlEl.textContent = ":: valid url";
         elements.alertUrlEl.classList.add("alert-valid");
         elements.alertUrlEl.classList.remove("alert-invalid");
-        siteUrl = elements.urlInput.value;
+        siteUrl = formatUrl(elements.urlInput.value);
         validURl = true;
     } else {
         elements.alertUrlEl.textContent = ":: invalid url";
@@ -75,6 +75,7 @@ elements.generateBtnEl.addEventListener("click", () => {
         ).style.backgroundColor = backgroundColor;
         elements.ulrPreviewEl.innerHTML = `<a class="url" target="_blank" href="https://${siteUrl}">${siteUrl} &rarr;</a>`;
     }
+    addDownloadListener();
 });
 
 elements.themesEl.forEach((element) => {
@@ -89,8 +90,6 @@ elements.themesEl.forEach((element) => {
         elements.backgroundColorEl.style.borderRight = `60px solid ${backgroundColor}`;
     });
 });
-
-addDownloadListener();
 
 // elements.logoInputEl.onchange = () => {
 //     let reader = new FileReader();
